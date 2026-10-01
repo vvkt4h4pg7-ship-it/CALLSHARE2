@@ -51,7 +51,7 @@ final class ContactsManager: ObservableObject {
         ]
 
         var result: [AppContact] = []
-        let request = CNFetchRequest< CNContact>(keysToFetch: keys)
+        let request = CNFetchRequest(keysToFetch: keys)
         do {
             try store.enumerateContacts(with: request) { contact, _ in
                 let phones = contact.phoneNumbers.map { $0.value.stringValue }.filter { !$0.isEmpty }
