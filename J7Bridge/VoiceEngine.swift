@@ -181,7 +181,7 @@ private final class AMRCodecAdapter {
             }
         }
         guard length > 0, length <= out.count else { return nil }
-        return Data(out.prefix(length))
+        return Data(out.prefix(Int(length)))
     }
 
     func decode(_ amr: Data) -> [Int16]? {
